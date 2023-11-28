@@ -2,7 +2,7 @@ const App = () => {
   return (
     <div>
       <h1>APP DE PELIS</h1>
-      <h2>TEST</h2>
+      <h2>ESTO FALLA</h2>
     </div>
   )
 }
