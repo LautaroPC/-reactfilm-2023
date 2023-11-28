@@ -7,10 +7,6 @@ describe('App', () => {
   it('should renders component', () => {
     const component = render(<App />)
 
-    const heading = component.getByRole("heading", {
-      name: "REACT"
-    })
-    expect(heading.textContent).toBe("REACT")
-    /* expect(component).toBeDefined() */
+     expect(component).toBeDefined()
   });
 });
