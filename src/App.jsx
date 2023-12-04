@@ -9,9 +9,6 @@ const App = () => {
        <RootProvider>
         <RouterProvider router={appRouter} />
       </RootProvider> 
-      <RootProvider>
-        <RouterProvider router={appRouter} />
-      </RootProvider>
     </>
   )
 }
