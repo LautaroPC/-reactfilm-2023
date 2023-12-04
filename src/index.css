@@ -1,7 +1,6 @@
 *, 
 *::before, 
 *::after{
-  /* box-sizing: border-box; */
   padding:0;
   margin:0;
 }
@@ -13,11 +12,14 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+swiper-container::part(button-prev),swiper-container::part(button-next) {
+  color: white;
+  /* border:solid; */
+}

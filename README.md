@@ -6,6 +6,7 @@
 
 - https://vitejs.dev/guide/env-and-mode.html
 
+- https://swiperjs.com/element
 
 PASOS
 - 1) CREAMOS EL PROYECTO DE REACT CON VITE
@@ -24,3 +25,9 @@ PASOS
 - 14) CONFIGURAMOS LAS VARIABLES DE ENTORNO EN GITHUB
 - 15) CREAMOS LA CARPETA .GITHUB Y LOS PIPELINES PARA LAS ACTIONS
 - 16) IGUALAMOS LOS REPOSITORIOS EN TODOS LOS ENTORNOS PARA QUE ESTEN IGUALES
+
+
+
+LOGIN
+usuario: usuario@example
+contraseña: contraseña
