@@ -4,6 +4,7 @@ import { useAuth } from '../../../hooks/use_auth';
 import AppButton from '../../../../../core/components/app_button/app_button';
 import Loading from '../../../../components/loading/Loading';
 import '../../../../../css/components/login.css'
+import '../../../../../core/components/app_button/button_primary.css'
 
 const LoginView = () => {
   const { login } = useAuth()
@@ -39,7 +40,11 @@ const LoginView = () => {
           <h4> Contraseña </h4>
           <input type="password" name="password" />
           <br />
-          <AppButton className="button-login" type={"submit"} onClick={login}>Iniciar Sesion</AppButton>
+          <AppButton style={{
+            padding: "5px 0",
+            marginBottom: "10px",
+            width: "100%"
+          }} className="button_primary" type={"submit"} onClick={login}>Iniciar Sesion</AppButton>
           <p>{error}</p>
         </form>
         {isLoading ? <Loading></Loading> : null}

@@ -2,6 +2,7 @@ import React from 'react'
 import { useAuth } from '../../auth/hooks/use_auth'
 import AppButton from '../../../core/components/app_button/app_button'
 import '../../home/views/home_view'
+import '../../../core/components/app_button/button_primary.css'
 
 const Header = ({ children }) => {
   const { isLoggedIn, logout } = useAuth()
@@ -17,13 +18,10 @@ const Header = ({ children }) => {
         >
           {children}
           <AppButton style={{
-            color: "white",
-            background: "red",
-            border: "none",
-            borderRadius: "5px",
             padding: "3px 10px",
             margin: "0 20px",
-          }}  onClick={logout}
+            
+          }} class="button_primary" onClick={logout}
           >Cerrar sesion</AppButton>
         </div> : null}
     </div>

@@ -11,6 +11,7 @@ import ListContainer from '../../components/list/list_container'
 import AppButton from '../../../core/components/app_button/app_button'
 import Footer from '../../components/footer/Footer'
 import '../view/movie.css'
+import '../../../core/components/app_button/button_primary.css'
 import '../../../core/components/app_button/app_button.css'
 
 
@@ -52,11 +53,8 @@ const MovieView = () => {
                 <div className='box-card'>
                   <div className='card-text' >
                     <AppButton className="app_button"
-                      style={{
-                        color: "red",
-                        backgroundColor: "white"
-                      }}
-                      onClick={() => { navigate("/") }}>Inicio</AppButton>
+                    style={{padding: "3px 10px", 
+                      margin: "0 20px" }}  onClick={() => { navigate("/") }}>Inicio</AppButton>
                     <h1>{movieDetails.title}</h1>
                     <h2>{movieDetails.tagline}</h2>
                     <h4>{movieDetails.description}</h4>
