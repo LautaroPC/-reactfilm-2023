@@ -6,7 +6,7 @@ const AppSwiper = ({children}) => {
   return (
     <swiper-container
       ref={swiperElRef}
-      slides-per-view="6"
+      slides-per-view="5"
       navigation="true"
       loop
     >

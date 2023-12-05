@@ -49,7 +49,7 @@ const HomeView = () => {
           <ListContainer movies={movies} moviesError={moviesError} moviesIsLoading={moviesIsLoading} /> :
           <>
             {popularMoviesError ? <BannerError /> : popularMoviesIsLoading ? <BannerSkeleton /> : <BannerContainer data={popularMovies}></BannerContainer>}
-            
+            <div style={{padding:"20px 53px"}}>
             {popularMoviesError ? <SwiperError /> : popularMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Popular Movies"} data={popularMovies} />}
             {topRatedMoviesError ? <SwiperError /> : topRatedMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Top Rated Movies"} data={topRatedMovies} />}
             {comingMoviesError ? <SwiperError /> : comingMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Coming Movies Movies"} data={comingMovies} />}
@@ -57,7 +57,7 @@ const HomeView = () => {
             {popularTvError ? <SwiperError /> : popularTvIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Popular TV"} data={popularTv}></SwiperContainer>}
             {topRatedTvError ? <SwiperError /> : topRatedTvIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Top Rated TV"} data={topRatedTv} />}
             {airingTodayTvError ? <SwiperError /> : airingTodayTvIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Airing Today TV"} data={airingTodayTv} />}
-            
+            </div>
         </>
           
         }
@@ -67,46 +67,3 @@ const HomeView = () => {
 }
 
 export default HomeView;
-
-
-
-/*
-const HomeView = () => {
-  
-  // Movies
-  const { data: popularMovies, error: popularMoviesError, isLoading: popularMoviesIsLoading } = useSWR(`getPopularMovies`, getPopularMovies);
-  const { data: topRatedMovies, error: topRatedMoviesError, isLoading: topRatedMoviesIsLoading } = useSWR(`getTopRatedMovies`, getTopRatedMovies);
-  
-  const {
-    query,
-    movies,
-    moviesError,
-    moviesIsLoading,
-    search
-  } = useMovieSearch();
-
-  return (
-    <div className='box-home' style={{backgroundColor:"rgb(0, 19, 20)"}}>
-      <div className='box-nav'>
-        <h1>ReactFilm</h1>
-        <div>
-          <Header >
-            <Sercher onSearch={search}></Sercher>
-          </Header>
-        </div>
-      </div>
-        {query != '' ?
-          <ListContainer movies={movies} moviesError={moviesError} moviesIsLoading={moviesIsLoading} /> :
-          <>
-            {popularMoviesError ? <BannerError /> : popularMoviesIsLoading ? <BannerSkeleton /> : <BannerContainer data={popularMovies}></BannerContainer>}
-
-            <div className='box-movie-tv'>
-            {popularMoviesError ? <SwiperError /> : popularMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Popular Movies"} data={popularMovies} />}
-            {topRatedMoviesError ? <SwiperError /> : topRatedMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Top Rated Movies"} data={topRatedMovies} />}
-            </div> 
-        </>
-        }
-    </div>
-  );
-}
-export default HomeView; */
