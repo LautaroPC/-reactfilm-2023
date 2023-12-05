@@ -23,7 +23,7 @@ const Header = ({ children }) => {
             borderRadius: "5px",
             padding: "3px 10px",
             margin: "0 20px",
-          }} onClick={logout}
+          }}  onClick={logout}
           >Cerrar sesion</AppButton>
         </div> : null}
     </div>

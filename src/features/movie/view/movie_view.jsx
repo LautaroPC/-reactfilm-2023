@@ -10,8 +10,9 @@ import useMovieSearch from '../../components/sercher/useMovieSearch'
 import ListContainer from '../../components/list/list_container'
 import AppButton from '../../../core/components/app_button/app_button'
 import Footer from '../../components/footer/Footer'
-import '..//view/movie.css'
+import '../view/movie.css'
 import '../../../core/components/app_button/app_button.css'
+
 
 
 const MovieView = () => {
@@ -50,12 +51,12 @@ const MovieView = () => {
                 <MovieSkeleton /> :
                 <div className='box-card'>
                   <div className='card-text' >
-                    <AppButton
-                      className="app_button"
+                    <AppButton className="app_button"
                       style={{
                         color: "red",
                         backgroundColor: "white"
-                      }} onClick={() => { navigate("/") }}>Inicio</AppButton> 
+                      }}
+                      onClick={() => { navigate("/") }}>Inicio</AppButton>
                     <h1>{movieDetails.title}</h1>
                     <h2>{movieDetails.tagline}</h2>
                     <h4>{movieDetails.description}</h4>

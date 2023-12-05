@@ -14,6 +14,8 @@ import Sercher from '../../components/sercher/Sercher';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import '../../../css/components/navbar.css'
+/* import '../views/home.css' */
+
 
 
 const HomeView = () => {
@@ -50,7 +52,7 @@ const HomeView = () => {
           <>
             {popularMoviesError ? <BannerError /> : popularMoviesIsLoading ? <BannerSkeleton /> : <BannerContainer data={popularMovies}></BannerContainer>}
 
-            <div className='box-movie-tv' style={{padding: "0 25px"}}>
+            <div className='box-movie-tv'>
             {popularMoviesError ? <SwiperError /> : popularMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Popular Movies"} data={popularMovies} />}
             {topRatedMoviesError ? <SwiperError /> : topRatedMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Top Rated Movies"} data={topRatedMovies} />}
             {comingMoviesError ? <SwiperError /> : comingMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Coming Movies Movies"} data={comingMovies} />}

@@ -9,6 +9,4 @@ const RootProvider = ({children}) => {
   )
 }
 
-
-
 export default RootProvider
