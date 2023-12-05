@@ -16,6 +16,7 @@ import Footer from '../../components/footer/Footer';
 import '../../../css/components/navbar.css'
 
 const HomeView = () => {
+  
   // Movies
   const { data: popularMovies, error: popularMoviesError, isLoading: popularMoviesIsLoading } = useSWR(`getPopularMovies`, getPopularMovies);
   const { data: topRatedMovies, error: topRatedMoviesError, isLoading: topRatedMoviesIsLoading } = useSWR(`getTopRatedMovies`, getTopRatedMovies);
@@ -25,7 +26,57 @@ const HomeView = () => {
   const { data: popularTv, error: popularTvError, isLoading: popularTvIsLoading } = useSWR(`getPopularTv`, getPopularTv);
   const { data: topRatedTv, error: topRatedTvError, isLoading: topRatedTvIsLoading } = useSWR(`getTopRatedTv`, getTopRatedTv);
   const { data: airingTodayTv, error: airingTodayTvError, isLoading: airingTodayTvIsLoading } = useSWR(`getAiringTodayTv`, getAiringTodayTv);
+ 
+  const {
+    query,
+    movies,
+    moviesError,
+    moviesIsLoading,
+    search
+  } = useMovieSearch();
 
+  return (
+    <div className='box-home' style={{backgroundColor:"rgb(0, 19, 20)"}}>
+      <div className='box-nav'>
+        <h1>ReactFilm</h1>
+        <div>
+          <Header >
+            <Sercher onSearch={search}></Sercher>
+          </Header>
+        </div>
+      </div>
+        {query != '' ?
+          <ListContainer movies={movies} moviesError={moviesError} moviesIsLoading={moviesIsLoading} /> :
+          <>
+            {popularMoviesError ? <BannerError /> : popularMoviesIsLoading ? <BannerSkeleton /> : <BannerContainer data={popularMovies}></BannerContainer>}
+            
+            {popularMoviesError ? <SwiperError /> : popularMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Popular Movies"} data={popularMovies} />}
+            {topRatedMoviesError ? <SwiperError /> : topRatedMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Top Rated Movies"} data={topRatedMovies} />}
+            {comingMoviesError ? <SwiperError /> : comingMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Coming Movies Movies"} data={comingMovies} />}
+
+            {popularTvError ? <SwiperError /> : popularTvIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Popular TV"} data={popularTv}></SwiperContainer>}
+            {topRatedTvError ? <SwiperError /> : topRatedTvIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Top Rated TV"} data={topRatedTv} />}
+            {airingTodayTvError ? <SwiperError /> : airingTodayTvIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Airing Today TV"} data={airingTodayTv} />}
+            
+        </>
+          
+        }
+      <Footer />
+    </div>
+  );
+}
+
+export default HomeView;
+
+
+
+/*
+const HomeView = () => {
+  
+  // Movies
+  const { data: popularMovies, error: popularMoviesError, isLoading: popularMoviesIsLoading } = useSWR(`getPopularMovies`, getPopularMovies);
+  const { data: topRatedMovies, error: topRatedMoviesError, isLoading: topRatedMoviesIsLoading } = useSWR(`getTopRatedMovies`, getTopRatedMovies);
+  
   const {
     query,
     movies,
@@ -52,20 +103,10 @@ const HomeView = () => {
             <div className='box-movie-tv'>
             {popularMoviesError ? <SwiperError /> : popularMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Popular Movies"} data={popularMovies} />}
             {topRatedMoviesError ? <SwiperError /> : topRatedMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Top Rated Movies"} data={topRatedMovies} />}
-            {comingMoviesError ? <SwiperError /> : comingMoviesIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Coming Movies Movies"} data={comingMovies} />}
-
-            {popularTvError ? <SwiperError /> : popularTvIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Popular TV"} data={popularTv}></SwiperContainer>}
-            {topRatedTvError ? <SwiperError /> : topRatedTvIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Top Rated TV"} data={topRatedTv} />}
-            {airingTodayTvError ? <SwiperError /> : airingTodayTvIsLoading ? <SwiperSkeleton /> : <SwiperContainer title={"Airing Today TV"} data={airingTodayTv} />}
-            </div>
-          </>
+            </div> 
+        </>
         }
-      <Footer />
     </div>
   );
 }
-
-export default HomeView;
-
-
-
+export default HomeView; */

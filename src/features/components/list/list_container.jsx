@@ -1,5 +1,5 @@
 import React from 'react'
-import List from './List.jsx'
+import List from '../list/List'
 
 const ListContainer = ({movies, moviesError, moviesIsLoading}) => {
   return (

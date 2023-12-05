@@ -58,4 +58,3 @@ export const AuthProvider = ({ children, fallback }) => {
       {children}
     </AuthContext.Provider>)
 };
-

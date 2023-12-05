@@ -1,6 +1,5 @@
 import { tmdb_paths } from "../../../../core/datasource/remote/tmdb/tmbd_api";
 
-
 export const tmdbMoviesTvAdapter = (response) => {
   const { results } = response;
 

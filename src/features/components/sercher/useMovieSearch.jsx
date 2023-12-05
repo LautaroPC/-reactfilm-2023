@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import { getMovieSearch } from '../../../features/components/header/services/search_service';
+import { getMovieSearch } from '../header/services/search_service'
+import { useEffect, useState } from "react";
+
 
 const useMovieSearch = () => {
   const [query, setQuery] = useState('');
@@ -18,9 +19,12 @@ const useMovieSearch = () => {
       if (query.trim() === '') {
         return;
       }
+
       setMoviesIsLoading(true);
+
       try {
         const response = await getMovieSearch(query);
+
         if (!cancelRequest) {
           setMovies(response);
         }
@@ -34,14 +38,15 @@ const useMovieSearch = () => {
         }
       }
     };
-    const delayFetch = setTimeout(fetchData, 2000);
+
+    const delayFetch = setTimeout(fetchData, 3000);
 
     return () => {
       cancelRequest = true;
       clearTimeout(delayFetch);
     };
   }, [query]);
-  
+
   return { query, movies, moviesError, moviesIsLoading, search };
 };
 

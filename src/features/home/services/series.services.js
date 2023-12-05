@@ -17,4 +17,5 @@ export const getAiringTodayTv = async () => {
   const { data } = await tmdb_api.get(tmdb_paths.tv.airing_today);
 
   return tmdbMoviesTvAdapter(data);
-}; 
+};  
+

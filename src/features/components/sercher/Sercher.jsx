@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Sercher = ({ onSearch }) => {
     const handleSubmit = (e) => {
@@ -7,14 +7,13 @@ const Sercher = ({ onSearch }) => {
     const handleChange = (e) => {
         onSearch(e.target.value)
     }
-
     return (
-    <div>
-        <form  onSubmit={handleSubmit}>
-            <input type="text" placeholder='buscar' onChange={handleChange}></input>
-        </form>
-    </div>
-  )
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder='buscar' onChange={handleChange}></input>
+            </form>
+        </div>
+    )
 }
 
-export default Sercher
+export default Sercher 
