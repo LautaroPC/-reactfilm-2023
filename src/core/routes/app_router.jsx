@@ -26,15 +26,16 @@ export const appRouter = createBrowserRouter([
   // 404
   {
     path: "*",
-    element: <PublicRoute>
-    <NotFound/>
-</PublicRoute>,/* <div> No se encontro la pagina </div>, */
+    element:
+      <PublicRoute>
+        <NotFound />
+      </PublicRoute>
   },
   {
     path: "/:id",
-    element: 
-        <PrivateRoute>
-            <MovieView/>
-        </PrivateRoute>,
-},
+    element:
+      <PrivateRoute>
+        <MovieView />
+      </PrivateRoute>,
+  },
 ]);
