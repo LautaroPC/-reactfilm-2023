@@ -1,11 +1,18 @@
 import axios from "axios";
 
+const VITE_APP_TMDB_API_KEY = "ecca6551bd14118cf70d43e4f498fe59"
+const VITE_APP_TMDB_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlY2NhNjU1MWJkMTQxMThjZjcwZDQzZTRmNDk4ZmU1OSIsInN1YiI6IjY1NjhmMzEzZDA1YTAzMDEyYzZmZmUwOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JsZuIgtadIPU1c-NWAKypkLfsulz7bDtDnSOcolkGOE"
+
 export const tmdb_api = axios.create({
-  baseURL: "https://api.themoviedb.org/3",
-  params: {
-    api_key: import.meta.env.VITE_APP_TMDB_API_KEY,
-  },
-});
+    baseURL: 'https://api.themoviedb.org/3',
+    headers: {
+        Authorization: `Bearer ${VITE_APP_TMDB_TOKEN}`
+    },
+    params: {
+        api_key: VITE_APP_TMDB_API_KEY,
+        language: 'es-ES',
+    },
+})
 
 export const tmdb_paths = {
   movies: {
@@ -31,8 +38,6 @@ export const tmdb_paths = {
         w500: "/w500",
         w780: "/w780",
         original: "/original",
-
-        
       },
       url: "https://image.tmdb.org/t/p",
     },
@@ -46,5 +51,4 @@ export const tmdb_paths = {
       url: "https://image.tmdb.org/t/p",
     },
   }, 
-  
 };
