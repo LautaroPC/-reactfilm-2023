@@ -1,5 +1,7 @@
 # PROYECTO FINAL CODO A CODO
 
+
+
 - https://www.robinwieruch.de/vitest-react-testing-library/
 
 - https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
@@ -28,6 +30,8 @@ PASOS
 
 
 
-LOGIN
-usuario: usuario@example
-contraseña: contraseña
+Inicio de sesión
+Para ingresar al sistema ingrese los siguientes datos:
+
+- usuario: usuario@example
+- contraseña: contraseña

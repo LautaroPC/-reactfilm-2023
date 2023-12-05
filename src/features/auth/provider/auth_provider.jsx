@@ -6,6 +6,7 @@ import {AppStorage} from "../../../core/base/app_storage";
 export const AUTJ_KEY = "isLoggedIn"
 
 export const AuthProvider = ({ children, fallback }) => {
+  const [user, setuser] = useState({});
   const [isLoggedIn, setIsloggedIn] = useState(false);
   const [isLoading, setIsloading] = useState(true);
   
@@ -48,6 +49,7 @@ export const AuthProvider = ({ children, fallback }) => {
   return (
     <AuthContext.Provider
       value={{
+        user,
         isLoggedIn,
         login,
         logout,

@@ -1,5 +1,5 @@
 import { tmdb_api, tmdb_paths } from "../../../../core/datasource/remote/tmdb/tmbd_api";
-import { tmdbMoviesTvAdapter } from "../../../adapters/tmdb.adapters";
+import { tmdbMoviesTvAdapter } from "../../../home/services/adapters/tmdb.adapters";
 
 export const getMovieSearch = async (parametros) => {
     const params = {

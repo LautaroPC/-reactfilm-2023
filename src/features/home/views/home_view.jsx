@@ -14,9 +14,6 @@ import Sercher from '../../components/sercher/Sercher';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import '../../../css/components/navbar.css'
-/* import '../views/home.css' */
-
-
 
 const HomeView = () => {
   // Movies

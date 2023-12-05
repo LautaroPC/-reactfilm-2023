@@ -14,8 +14,6 @@ import '../view/movie.css'
 import '../../../core/components/app_button/button_primary.css'
 import '../../../core/components/app_button/app_button.css'
 
-
-
 const MovieView = () => {
 
   const { id } = useParams()

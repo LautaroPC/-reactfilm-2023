@@ -4,6 +4,7 @@ import AppButton from '../../../core/components/app_button/app_button'
 import '../../home/views/home_view'
 import '../../../core/components/app_button/button_primary.css'
 
+
 const Header = ({ children }) => {
   const { isLoggedIn, logout } = useAuth()
 

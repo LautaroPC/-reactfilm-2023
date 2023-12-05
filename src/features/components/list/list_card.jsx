@@ -1,5 +1,7 @@
 import React from 'react'
 import {  useNavigate } from 'react-router-dom'
+import useMovieSearch from '../sercher/useMovieSearch'
+
 
 const ListCard = ({item}) => {
   const navigate = useNavigate()
