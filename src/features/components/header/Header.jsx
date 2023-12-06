@@ -1,15 +1,14 @@
 import React from 'react'
-import { useAuth } from '../../auth/hooks/use_auth'
+import { useAuth } from '../../auth/hook/use_auth'
 import AppButton from '../../../core/components/app_button/app_button'
 import '../../home/views/home_view'
-import '../../../core/components/app_button/button_primary.css'
+import '../../../core/components/app_button/button_primary.css' 
 
+const Header = ({children}) => {
 
-const Header = ({ children }) => {
-  const { isLoggedIn, logout } = useAuth()
+  const {isLoggedIn, logout} = useAuth()
 
   return (
-    
     <div>
       {isLoggedIn ?  
       <div style={{
@@ -23,9 +22,33 @@ const Header = ({ children }) => {
             margin: "0 20px",
           }} class="button_primary" onClick={logout}>Cerrar sesion</AppButton>
       </div>: null}
+
     </div>
   )
 }
 
 export default Header
 
+/* ORIGINAL
+const Header = ({children}) => {
+
+  const {isLoggedIn, logout} = useAuth()
+
+  return (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'row',
+    }
+    }>
+      {isLoggedIn ?  
+      <div>
+        {children}
+        <AppButton onClick={logout}>Salir</AppButton>
+      </div>: null}
+
+    </div>
+  )
+}
+
+
+*/

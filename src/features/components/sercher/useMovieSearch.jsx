@@ -1,5 +1,5 @@
-import { getMovieSearch } from '../header/services/search_service'
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
+import { getMovieSearch } from '../header/services/search_service';
 
 
 const useMovieSearch = () => {
@@ -39,7 +39,7 @@ const useMovieSearch = () => {
       }
     };
 
-    const delayFetch = setTimeout(fetchData, 3000);
+    const delayFetch = setTimeout(fetchData, 2000);
 
     return () => {
       cancelRequest = true;

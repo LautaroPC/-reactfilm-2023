@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
-import { useAuth } from '../../../hooks/use_auth';
+import { useAuth } from '../../../../auth/hook/use_auth'
 import AppButton from '../../../../../core/components/app_button/app_button';
-import Loading from '../../../../components/loading/Loading';
+import Loading from '../../../../Components/loading/Loading';
 import '../../../../../css/components/login.css'
 import '../../../../../core/components/app_button/button_primary.css'
 
 const LoginView = () => {
-  const { login } = useAuth()
+
+  const {login} = useAuth();
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setIsLoading(true);
 
     try {
       const { email, password } = Object.fromEntries(new FormData(e.target));
@@ -52,4 +51,4 @@ const LoginView = () => {
   )
 }
 
-export default LoginView 
+export default LoginView;

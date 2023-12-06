@@ -1,24 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import useSwr from 'swr'
 import { getMovieDetails } from '../services/movie_detail_services'
-import Header from '../../components/header/Header'
+import Footer from '../../Components/footer/Footer'
+import Header from '../../Components/header/Header'
+import AppButton from '../../../core/components/app_button/app_button'
 import MovieSkeleton from '../components/movie_skeleton'
 import MovieError from '../components/movie_error'
-import Sercher from '../../components/sercher/Sercher'
-import useMovieSearch from '../../components/sercher/useMovieSearch'
-import ListContainer from '../../components/list/list_container'
-import AppButton from '../../../core/components/app_button/app_button'
-import Footer from '../../components/footer/Footer'
+import Sercher from '../../Components/sercher/Sercher'
+import useMovieSearch from '../../Components/sercher/useMovieSearch'
+import ListContainer from '../../Components/list/list_container'
 import '../view/movie.css'
-import '../../../core/components/app_button/button_primary.css'
-import '../../../core/components/app_button/app_button.css'
+import '../../../core/components/app_button/app_button_style.css'
+import '../../../css/components/navbar.css'
 
 const MovieView = () => {
 
-  const { id } = useParams()
+  const {id} = useParams()
   const navigate = useNavigate()
-  const { data: movieDetails, error: movieDetailsError, isLoading: movieDetailsIsLoading } = useSwr('getMovieDetails', () => getMovieDetails(id));
+  const { data: movieDetails, error: movieDetailsError, isLoading: movieDetailsIsLoading } = useSwr('getMovieDetails', ()=>getMovieDetails(id));  
 
   const {
     query,
@@ -41,7 +41,7 @@ const MovieView = () => {
         </div>
       </div>
       <>
-        {query != '' ?
+      {query != '' ?
           <ListContainer movies={movies} moviesError={moviesError} moviesIsLoading={moviesIsLoading} /> :
           <>
             {movieDetailsError ?
@@ -50,7 +50,7 @@ const MovieView = () => {
                 <MovieSkeleton /> :
                 <div className='box-card'>
                   <div className='card-text' >
-                    <AppButton className="app_button"
+                    <AppButton className="app_button_style"
                     style={{padding: "3px 10px", 
                       margin: "0 20px" }}  onClick={() => { navigate("/") }}>Inicio</AppButton>
                     <h1>{movieDetails.title}</h1>

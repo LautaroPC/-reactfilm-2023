@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { AuthContext } from "../context/auth_context"
+import React, { useEffect, useState } from 'react'
+import { AuthContext } from '../context/auth_context'
 import {AppStorage} from "../../../core/base/app_storage";
 
 
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children, fallback }) => {
     };
 
     initAuth();
-  }, [])
+  }, []) 
 
   const login = async (email, password) => {
 
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children, fallback }) => {
     
     setIsloggedIn(false);
     removeLoginState();
-  };
+   };
 
   if (fallback && isLoading) return fallback;
 

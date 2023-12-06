@@ -1,5 +1,6 @@
-import { tmdb_api, tmdb_paths } from "../../../core/datasource/remote/tmdb/tmbd_api";
-import { movieDetailsAdapter } from "../services/adapter/movie_detail_adapter";
+import { tmdb_api, tmdb_paths } from "../../../core/datasource/tmdb/tmdb_api";
+import { movieDetailsAdapter } from "./adapter/movie_detail_adapter";
+
 
 export const getMovieDetails = async (id) => {
         
