@@ -1,7 +1,7 @@
 import React from 'react'
 import {  useNavigate } from 'react-router-dom'
 import useMovieSearch from '../sercher/useMovieSearch'
-import list_card_style from '../list/list_card_style.css'
+import '../list/list_card_style.css'
 
 const ListCard = ({item}) => {
 
@@ -13,9 +13,7 @@ const ListCard = ({item}) => {
   }
 
   return (
-    <div className='box-card-list' style={{
-        backgroundImage: `url(${item.backdrop})`,
-      }}
+    <div className='box-card-list' style={{backgroundImage: `url(${item.backdrop})`,}}
       onClick={handleClick}>
         <h1 style={{fontSize:"1.3rem"}}>{item.title}</h1>
     </div>
