@@ -57,7 +57,7 @@ const MovieView = () => {
                     <h2>{movieDetails.tagline}</h2>
                     <h4>{movieDetails.description}</h4>
                     <h3>Rating: {movieDetails.rating}</h3>
-                    <h3>Generos</h3>
+                    <h3>Generos: </h3>
                     <ul>
                       {movieDetails.genres.map((genere, index) => (
                         <li key={index}>{genere}</li>

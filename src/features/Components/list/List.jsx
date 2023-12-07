@@ -1,10 +1,9 @@
 import React from 'react'
-import ListCard from './list_card'
-import ListError from './list_error'
-import ListSkeleton from './list_skeleton'
+import ListCard from '../list/list_card'
+import ListError from '../list/list_error'
+import ListSkeleton from '../list/list_skeleton'
 
 const List = ({data, error, isLoading}) => {
-
 
   return (
     <div style={{

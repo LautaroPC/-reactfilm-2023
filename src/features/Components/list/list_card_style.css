@@ -1,0 +1,16 @@
+.box-card-list:hover{
+  transform: scale(1.2,1.2);
+  transition:all 0.4s ease;  
+}
+
+.box-card-list{
+  height: 150px;
+  width: 250px;
+  background-image: url(${item.backdrop});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 15px;
+}
