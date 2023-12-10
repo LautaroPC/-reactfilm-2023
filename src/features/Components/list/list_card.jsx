@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import useMovieSearch from '../sercher/useMovieSearch'
-import '../list/list_card_style.css'
+import './list_card_style.css'
 
 const ListCard = ({ item }) => {
 
