@@ -10,6 +10,7 @@ const List = ({data, error, isLoading}) => {
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-between',
+      margin: "0 30px",
     }}>
     {error ? <ListError/> : 
       isLoading ? <ListSkeleton/> :
