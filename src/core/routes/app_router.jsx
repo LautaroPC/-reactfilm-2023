@@ -8,31 +8,37 @@ import PublicRoute from '../../features/auth/components/public_route';
 import MovieView from '../../features/movie/view/movie_view';
 
 export const appRouter = createBrowserRouter([
-    {
-        path: "/",
-        element:<PrivateRoute>
-                    <HomeView/>
-                </PrivateRoute>,
-    },
-    {
-        path: "/login",
-        element:<PublicRoute>
-                    <LoginView/>
-                </PublicRoute>,
-    },
-    // 404
-    {
-        path: "*",
-        element: <PublicRoute>
-                    <NotFound/>
-                </PublicRoute>,
-    },
-    {
-        path: "/:id",
-        element: 
-            <PrivateRoute>
-                <MovieView/>
-            </PrivateRoute>,
-    }
-
+  {
+    path: "/",
+      element: <PrivateRoute>
+        <HomeView />
+      </PrivateRoute>,
+},
+  {
+    path: "/login",
+      element: <PublicRoute>
+        <LoginView />
+      </PublicRoute>,
+},
+  // 404
+  {
+    path: "*",
+      element: <PublicRoute>
+        <NotFound />
+      </PublicRoute>,
+},
+  {
+    path: "/:id",
+      element:
+    <PrivateRoute>
+      <MovieView />
+    </PrivateRoute>,
+},
+  // ERROR 404
+  {
+    path: "*",
+      element: <PublicRoute>
+        <NotFound />
+      </PublicRoute>,
+}
 ])

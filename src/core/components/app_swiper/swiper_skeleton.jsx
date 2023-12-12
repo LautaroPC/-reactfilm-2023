@@ -1,7 +1,7 @@
 import React from 'react'
 
 const SwiperSkeleton = () => {
-  
+
   return (
     <div>SwiperSkeleton</div>
   )

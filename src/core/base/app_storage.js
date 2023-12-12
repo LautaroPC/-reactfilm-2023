@@ -1,5 +1,5 @@
 export class AppStorage {
-  
+
   static async save(key, value) {
     return localStorage.setItem(key, JSON.stringify(value));
   }

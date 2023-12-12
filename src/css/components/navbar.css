@@ -4,11 +4,12 @@
   align-items: center;
   margin: 20px;
 }
-.box-nav h1 {
+
+.box-nav h1 a {
   display: flex;
   align-items: end;
   color: red;
   padding: 0;
   margin: 0;
+  text-decoration-line: none;
 }
-

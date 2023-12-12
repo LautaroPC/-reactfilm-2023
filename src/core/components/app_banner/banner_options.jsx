@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BannerOptions = ({children}) => {
+const BannerOptions = ({ children }) => {
 
   return (
     <div>{children}</div>

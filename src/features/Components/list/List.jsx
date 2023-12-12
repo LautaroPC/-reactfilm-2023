@@ -3,7 +3,7 @@ import ListCard from '../list/list_card'
 import ListError from '../list/list_error'
 import ListSkeleton from '../list/list_skeleton'
 
-const List = ({data, error, isLoading}) => {
+const List = ({ data, error, isLoading }) => {
 
   return (
     <div style={{
@@ -12,12 +12,12 @@ const List = ({data, error, isLoading}) => {
       justifyContent: 'space-between',
       margin: "0 3rem",
     }}>
-    {error ? <ListError/> : 
-      isLoading ? <ListSkeleton/> :
-      data?.map((item) => (
-          <ListCard key={item.id} item={item}></ListCard>
-      ))
-    }
+      {error ? <ListError /> :
+        isLoading ? <ListSkeleton /> :
+          data?.map((item) => (
+            <ListCard key={item.id} item={item}></ListCard>
+          ))
+      }
     </div>
   )
 }

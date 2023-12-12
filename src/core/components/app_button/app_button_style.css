@@ -1,8 +1,8 @@
-.app_button_style{
+.app_button_style {
   border: none;
-  border-radius: 5px; 
-  padding: 3px 10px; 
-  margin: 0 20px; 
-  font-size: 25px;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin: 0 20px;
+  font-size: 20px;
   font-weight: bold;
 }

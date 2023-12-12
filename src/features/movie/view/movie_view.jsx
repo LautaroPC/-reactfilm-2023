@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import useSwr from 'swr'
+import useSWR from 'swr'
 import { getMovieDetails } from '../services/movie_detail_services'
 import Footer from '../../Components/footer/Footer'
 import Header from '../../Components/header/Header'
@@ -16,9 +16,9 @@ import '../../../css/components/navbar.css'
 
 const MovieView = () => {
 
-  const {id} = useParams()
+  const { id } = useParams()
   const navigate = useNavigate()
-  const { data: movieDetails, error: movieDetailsError, isLoading: movieDetailsIsLoading } = useSwr('getMovieDetails', ()=>getMovieDetails(id));  
+  const { data: movieDetails, error: movieDetailsError, isLoading: movieDetailsIsLoading } = useSWR('getMovieDetails', () => getMovieDetails(id));
 
   const {
     query,
@@ -33,7 +33,7 @@ const MovieView = () => {
   return (
     <div>
       <div className='box-nav'>
-        <h1>ReactFilm</h1>
+        <h1 style={{ fontWeight: "bold" }}><a href="index.html">ReactFilm</a></h1>
         <div>
           <Header >
             <Sercher onSearch={search}></Sercher>
@@ -41,7 +41,7 @@ const MovieView = () => {
         </div>
       </div>
       <>
-      {query != '' ?
+        {query != '' ?
           <ListContainer movies={movies} moviesError={moviesError} moviesIsLoading={moviesIsLoading} /> :
           <>
             {movieDetailsError ?
@@ -51,8 +51,7 @@ const MovieView = () => {
                 <div className='box-card'>
                   <div className='card-text' >
                     <AppButton className="app_button_style"
-                    style={{padding: "3px 10px", 
-                      margin: "0 20px" }}  onClick={() => { navigate("/") }}>Inicio</AppButton>
+                      onClick={() => { navigate("/") }}>Inicio</AppButton>
                     <h1>{movieDetails.title}</h1>
                     <h2>{movieDetails.tagline}</h2>
                     <h4>{movieDetails.description}</h4>

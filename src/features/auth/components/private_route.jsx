@@ -1,8 +1,8 @@
 import React from 'react'
-import { useAuth } from '../hook/use_auth';
+import { useAuth } from '../hook/use_auth1';
 import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = ({children}) => {
+const PrivateRoute = ({ children }) => {
   const { isLoggedIn } = useAuth();
 
   if (isLoggedIn) return children;

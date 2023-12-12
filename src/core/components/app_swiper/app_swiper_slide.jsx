@@ -1,7 +1,7 @@
 import React from 'react'
 
-const AppSwiperSlide = ({children}) => {
-  
+const AppSwiperSlide = ({ children }) => {
+
   return (
     <swiper-slide>{children}</swiper-slide>
   )

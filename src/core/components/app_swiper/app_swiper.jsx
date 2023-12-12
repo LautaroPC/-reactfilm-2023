@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const AppSwiper = ({children}) => {
+const AppSwiper = ({ children }) => {
   const swiperElRef = useRef(null);
 
   return (
