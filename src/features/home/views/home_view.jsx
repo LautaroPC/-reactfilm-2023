@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../Components/header/Header';
 import Footer from '../../Components/footer/Footer';
-import Sercher from '../../Components/sercher/Sercher';
+import Sercher from '../../Components/sercher/Serchers';
 import useMovieSearch from '../../Components/sercher/useMovieSearch';
 import { getPopularMovies, getTopRatedMovies, getUpcomingMovies } from '../services/movies_services';
 import { getAiringTodayTv, getPopularTv, getTopRatedTv } from '../services/tv_services';

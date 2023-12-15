@@ -1,15 +1,14 @@
 .box-card-list {
-  width: 342px;
+  width: 320px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   padding: 2rem;
   margin: 2rem 1rem;
-  border-radius: 15px;
 }
 
 .box-card-list:hover {
-  opacity: 40%;
+  opacity: 80%;
   transform: scale(1.2, 1.2);
   transition: all 0.4s ease;
 }

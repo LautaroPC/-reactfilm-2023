@@ -16,6 +16,7 @@ const useMovieSearch = () => {
 
     const fetchData = async () => {
       if (query.trim() === '') {
+        setMovies(null);
         return;
       }
 

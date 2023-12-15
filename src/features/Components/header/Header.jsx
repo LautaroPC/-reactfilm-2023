@@ -7,7 +7,7 @@ import '../../../core/components/app_button/button_primary.css'
 const Header = ({ children }) => {
 
   const { isLoggedIn, logout } = useAuth()
-
+  
   return (
     <div>
       {isLoggedIn ?

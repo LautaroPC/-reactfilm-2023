@@ -8,7 +8,6 @@ const ListCard = ({ item }) => {
   const navigate = useNavigate()
 
   const handleClick = () => {
-    navigate("/");
     navigate(`/${item.id}`)
   }
 
@@ -23,5 +22,4 @@ const ListCard = ({ item }) => {
   )
 }
 
-
-export default ListCard
+export default ListCard 

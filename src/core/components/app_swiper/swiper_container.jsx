@@ -7,7 +7,7 @@ import AppSwiper from '../app_swiper/app_swiper'
 import './swiper_container.css'
 
 const SwiperContainer = ({ title, data }) => {
-  const navigate = useNavigate()
+  let navigate = useNavigate()
 
   return (
     <div>

@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 const BannerContainer = ({ data }) => {
   const bannerMovie = data[Math.floor(Math.random() * 20)]
   const { title, description, poster, id} = bannerMovie
-  const navigate = useNavigate()
+  let navigate = useNavigate()
 
   return (
     <div style={{
