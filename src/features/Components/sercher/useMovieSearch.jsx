@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getMovieSearch } from '../header/services/search_service';
 
-
 const useMovieSearch = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState();

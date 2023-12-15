@@ -10,6 +10,6 @@ export const tmdbMoviesTvAdapter = (response) => {
     backdrop: `${tmdb_paths.images.backdrop.url}${tmdb_paths.images.backdrop.sizes.w300}${item.backdrop_path}`,
     description: item.overview,
     rating: item.vote_average,
-    video: item.video,
+    
   })))
 }

@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import useSWR from 'swr'
 import { getMovieDetails } from '../services/movie_detail_services'
+import useSWR from 'swr'
 import Footer from '../../Components/footer/Footer'
 import Header from '../../Components/header/Header'
-import AppButton from '../../../core/components/app_button/app_button'
-import MovieSkeleton from '../components/movie_skeleton'
-import MovieError from '../components/movie_error'
 import Sercher from '../../Components/sercher/Sercher'
 import useMovieSearch from '../../Components/sercher/useMovieSearch'
+import MovieSkeleton from '../components/movie_skeleton'
+import MovieError from '../components/movie_error'
 import ListContainer from '../../Components/list/list_container'
+import AppButton from '../../../core/components/app_button/app_button'
 import '../view/movie.css'
 import '../../../core/components/app_button/app_button_style.css'
 import '../../../css/components/navbar.css'
 
 const MovieView = () => {
-
+  
   const { id } = useParams()
   const navigate = useNavigate()
   const { data: movieDetails, error: movieDetailsError, isLoading: movieDetailsIsLoading } = useSWR('getMovieDetails', () => getMovieDetails(id));
@@ -31,6 +31,7 @@ const MovieView = () => {
   console.log(query);
 
   return (
+    
     <div>
       <div className='box-nav'>
         <h1 style={{ fontWeight: "bold" }}><a href="index.html">ReactFilm</a></h1>
@@ -38,7 +39,7 @@ const MovieView = () => {
           <Header >
             <Sercher onSearch={search}></Sercher>
           </Header>
-        </div>
+        </div>         
       </div>
       <>
         {query != '' ?

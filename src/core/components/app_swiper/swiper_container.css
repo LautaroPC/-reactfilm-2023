@@ -1,0 +1,18 @@
+.box-container {
+  height: 350px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+
+.box-container:hover {
+  opacity: 40%;
+  transform: scale(1.1);
+  transition: all 0.4s ease;
+}
+
+h3{
+  padding: 2px;
+  
+}

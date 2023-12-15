@@ -4,6 +4,7 @@ import SwiperTitle from '../app_title/app_title'
 import AppSwiperSlide from '../app_swiper/app_swiper_slide'
 import SwiperCard from '../app_swiper/swiper_card'
 import AppSwiper from '../app_swiper/app_swiper'
+import './swiper_container.css'
 
 const SwiperContainer = ({ title, data }) => {
   const navigate = useNavigate()
@@ -14,14 +15,9 @@ const SwiperContainer = ({ title, data }) => {
       <AppSwiper >
         {data?.map((e, index) => (
           <AppSwiperSlide key={index}>
-            <div style={{
-              backgroundImage: `url(${e.backdrop})`,
-              height: "150px",
-              width: "250px",
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
+            <div className="box-container" style={{
+              backgroundImage: `url(${e.poster})`,   
+            }} 
               onClick={() => { navigate(`/${e.id}`) }}>
               <SwiperCard title={e.title}>
               </SwiperCard>

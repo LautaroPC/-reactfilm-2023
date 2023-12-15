@@ -9,6 +9,7 @@ const AppSwiper = ({ children }) => {
       slides-per-view="5"
       navigation="true"
       loop
+      
     >
       {children}
     </swiper-container>

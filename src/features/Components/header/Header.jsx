@@ -22,7 +22,6 @@ const Header = ({ children }) => {
             margin: "0 20px",
           }} class="button_primary" onClick={logout}>Cerrar sesion</AppButton>
         </div> : null}
-
     </div>
   )
 }
